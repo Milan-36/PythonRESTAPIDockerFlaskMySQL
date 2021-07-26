@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oscar Male Actor Table</title>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Year</th>
+        <th scope="col">Age</th>
+        <th scope="col">Name</th>
+        <th scope="col">Movie</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for actor in actors %}
+    <tr>
+        <td>{{ actor.id }}</td>
+         <td>{{ actor.Year }}</td>
+        <td>{{ actor.Age }}</td>
+        <td><a href="/view/{{actor.id}}">{{ actor.Name }}</a></td>
+        <td>{{ actor.Movie }}</td>
+        <td><a href="/edit/{{actor.id}}" class="card-link btn btn-primary">edit</a></td>
+        <td><form action="/delete/{{actor.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form></td>
+    </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+</body>
+</html>
