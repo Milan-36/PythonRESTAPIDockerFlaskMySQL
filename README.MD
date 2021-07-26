@@ -4,6 +4,10 @@ This is Homework 4 of IS 601. This project is about to setup Pycharm with Docker
 
 # Screenshots:
 
+
+## 1. Web Application Outputs:
+[Click Here to open PDF](https://github.com/Milan-36/PythonDockerFlaskMySQL/blob/master/Homework_5.pdf)
+
 ## 2. SQL Database Screenshot:
 ![pycharm data query](screenshots/oscar_male_actor_data_table.png)
 
