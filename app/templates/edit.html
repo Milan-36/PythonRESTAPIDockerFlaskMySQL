@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+{% extends "layout.html" %}
+{% block content %}
+<form class="form-horizontal" action="/edit/{{actor.id}}" method="post">
+    <div class="form-group">
+            <label for="Year"><b>Year</b></label>
+        <div class="col-sm-10">
+            <input id="Year" type="text" class="form-control" placeholder="Actor Name"
+                   name="Year" value="{{actor.Year}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+            <label for="Age"><b>Age</b></label>
+        <div class="col-sm-10">
+            <input id="Age" type="text" class="form-control" placeholder="Actor Age"
+                   name="Age" value="{{actor.Age}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+            <label for="Name"><b>Name</b></label>
+        <div class="col-sm-10">
+            <input id="Name" type="text" class="form-control" placeholder="Actor Name"
+                   name="Name" value="{{actor.Name}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+            <label for="Movie"><b>Movie</b></label>
+        <div class="col-sm-10">
+            <input id="Movie" type="text" class="form-control" placeholder="Actor Movie"
+                   name="Movie" value="{{actor.Movie}}">
+        </div>
+    </div>
+
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </div>
+
+</form>
+{% endblock %}
+</body>
+</html>
