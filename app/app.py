@@ -100,11 +100,11 @@ def api_retrieve(actor_id) -> str:
     return resp
 
 
-@app.route('/api/v1/actors/', methods=['POST'])
+@app.route('/api/v1/actors', methods=['POST'])
 def api_add() -> str:
     content = request.json
     cursor = mysql.get_db().cursor()
-    inputData = (content['ID'], content['Year'], content['Age'],
+    inputData = (content['Year'], content['Age'],
                  content['Name'], content['Movie'])
     sql_insert_query = """INSERT INTO 
         oscar_age_male (Year, Age, Name, Movie) 
@@ -121,16 +121,15 @@ def api_edit(actor_id) -> str:
     content = request.json
     inputData = (content['ID'], content['Year'], content['Age'],
                  content['Name'], content['Movie'], actor_id)
-    sql_update_query = """UPDATE oscar_age_male t SET t.ID = %s, 
-        t.Year = %s, t.Age = %s, t.Name = 
-        %s, t.Movie = %s WHERE t.id = %s """
+    sql_update_query = """UPDATE oscar_age_male t SET t.ID = %s, t.Year = %s, t.Age = %s,
+    t.Name = %s, t.Movie = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
     return resp
 
 
-@app.route('/api/actors/<int:actor_id>', methods=['DELETE'])
+@app.route('/api/v1/actors/<int:actor_id>', methods=['DELETE'])
 def api_delete(actor_id) -> str:
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM oscar_age_male WHERE id = %s """
