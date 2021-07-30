@@ -132,7 +132,10 @@ def api_edit(actor_id) -> str:
 
 @app.route('/api/actors/<int:actor_id>', methods=['DELETE'])
 def api_delete(actor_id) -> str:
-
+    cursor = mysql.get_db().cursor()
+    sql_delete_query = """DELETE FROM oscar_age_male WHERE id = %s """
+    cursor.execute(sql_delete_query, actor_id)
+    mysql.get_db().commit()
     resp = Response(status=210, mimetype='application/json')
     return resp
 
