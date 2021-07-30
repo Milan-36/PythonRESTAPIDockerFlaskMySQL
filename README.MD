@@ -1,6 +1,7 @@
 # Project Description
 
-This is Homework 4 of IS 601. This project is about to setup Pycharm with Docker, Flask, MYSQL.
+This is Project 3 of IS 601. This project is about to setup Pycharm with Docker, Flask, MYSQL.
+In this project, created a [REST - Representational state transfer](https://en.wikipedia.org/wiki/Representational_state_transfer) API and use Postman to test the GET, POST, PUT, and DELETE request methods to retrieve, create, update, and delete records.
 
 # Screenshots:
 
