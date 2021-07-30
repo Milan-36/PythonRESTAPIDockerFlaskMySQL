@@ -19,3 +19,9 @@ This is Homework 4 of IS 601. This project is about to setup Pycharm with Docker
 
 ## 5. Database Connected:
 ![Connectivity](screenshots/Database_Connected.png)
+
+
+
+# Useful Links
+
+[Reference - Project 3](https://github.com/kaw393939/PythonDockerFlaskPycharm/tree/lesson4)
